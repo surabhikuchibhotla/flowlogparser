@@ -18,10 +18,13 @@ This program processes flow logs, maps each entry to a tag based on a lookup tab
 Run the program using:
 
 ```sh
-python main.py
+python main.py <flow_log_file> <lookup_file> <protocol_file> <output_file>
 ```
 
-The script uses predefined file paths. Ensure all input files are in the same directory. If you want to change the files that are being uploaded, add them to the directory and change the file path names in the main.py file.
+Example:
+```sh
+python main.py flow_log_data.txt example_lookup_table.csv protocol_numbers.txt output.csv
+```
 
 ## Assumptions
 
@@ -44,25 +47,23 @@ The output file `output.csv` contains Tag Counts and Port/Protocol Combination C
 - Uses only built-in Python libraries.
 - Ensure all input files are formatted correctly to avoid errors.
 
-## Testing
+## Running Test Cases
 
-- Run the script with sample log files.
-- Verify output matches expected results.
-- The script uses predefined file paths. Ensure all input files are in the same directory.
-
-## Testing with Other Files
-
-To test the program with different input files:
-
-1. **Place the new files** (e.g., `new_flow_log.txt`, `new_lookup_table.csv`) in the project directory.
-2. **Modify `main.py`** to update the file paths:
-   - Change the `flow_log_file` variable to point to the new log file.
-   - Change the `lookup_file` variable to point to the new lookup table.
-   - Change the `protocol_file` if needed.
-3. Run the program using:
+This project includes a set of predefined test cases in the `test_inputs/` directory. To run all test cases, use:
 
 ```sh
-python main.py
+python run_tests.py
 ```
 
+The script will automatically copy the relevant test files, execute `main.py`, and compare the output with expected results. It will print `PASS` or `FAIL` for each test case.
+
+### Adding New Test Cases
+To add a new test case:
+1. Create a new folder under `test_inputs/`, e.g., `test_case_4`.
+2. Add the required test files:
+   - `flow_log_data.txt`
+   - `example_lookup_table.csv`
+   - `expected_output.csv`
+3. Update `run_tests.py` by adding `"test_case_4"` to the `TEST_CASES` list.
+4. Run the tests using `python run_tests.py`.
 The output will be generated in `output.csv`.

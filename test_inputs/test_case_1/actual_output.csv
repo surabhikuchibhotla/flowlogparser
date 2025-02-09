@@ -1,8 +1,10 @@
 Tag Counts:
 Tag, Count
-Email,1
+WebTraffic,1
+RemoteAccess,1
 Untagged, 0
 
 Port/Porotocol Combination Counts:
 Port,Protocol,Count
-993, tcp, 1
+443, tcp, 1
+23, tcp, 1

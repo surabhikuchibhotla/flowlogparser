@@ -37,7 +37,7 @@ The script uses predefined file paths. Ensure all input files are in the same di
 
 ## Output Format
 
-The output file `output.csv` contains ### Tag Counts and ### Port/Protocol Combination Counts.
+The output file `output.csv` contains Tag Counts and Port/Protocol Combination Counts. Refer to the output file `output.csv` for an example on how the output will look.
 
 ## Installation & Dependencies
 

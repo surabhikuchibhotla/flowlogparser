@@ -48,3 +48,21 @@ The output file `output.csv` contains Tag Counts and Port/Protocol Combination C
 
 - Run the script with sample log files.
 - Verify output matches expected results.
+- The script uses predefined file paths. Ensure all input files are in the same directory.
+
+## Testing with Other Files
+
+To test the program with different input files:
+
+1. **Place the new files** (e.g., `new_flow_log.txt`, `new_lookup_table.csv`) in the project directory.
+2. **Modify `main.py`** to update the file paths:
+   - Change the `flow_log_file` variable to point to the new log file.
+   - Change the `lookup_file` variable to point to the new lookup table.
+   - Change the `protocol_file` if needed.
+3. Run the program using:
+
+```sh
+python main.py
+```
+
+The output will be generated in `output.csv`.

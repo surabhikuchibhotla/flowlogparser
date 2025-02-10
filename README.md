@@ -21,7 +21,7 @@ Run the program using:
 python main.py <flow_log_file> <lookup_file> <protocol_file> <output_file>
 ```
 
-Example:
+Example (to run the files provided in the main repository):
 ```sh
 python main.py flow_log_data.txt example_lookup_table.csv protocol_numbers.txt output.csv
 ```
@@ -56,6 +56,15 @@ python run_tests.py
 ```
 
 The script will automatically copy the relevant test files, execute `main.py`, and compare the output with expected results. It will print `PASS` or `FAIL` for each test case.
+
+### **Test Case 1: Standard Lookup**  
+Checks if flow logs with known destination ports are correctly assigned tags from the lookup table.  
+
+### **Test Case 2: Untagged Entries**  
+Ensures logs with unknown ports are labeled as "Untagged" while known ports receive the correct tags.  
+
+### **Test Case 3: Malformed Log Entry Handling**  
+Tests if the parser skips invalid log entries while correctly processing valid ones.
 
 ### Adding New Test Cases
 To add a new test case:
